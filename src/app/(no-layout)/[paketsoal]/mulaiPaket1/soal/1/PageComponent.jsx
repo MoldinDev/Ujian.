@@ -54,17 +54,30 @@ export default function PageComponent({dataSoals}) {
     setDistance(distanceFromNoSoal)
 	  if(distance < 1){
 		  let jawabanBenar = 0;
+		  let jTWKs = 0;
+   		 let jTIUs = 0;
+   		 let jTKPs = 0;
 		  let jSalah = []
       for(let i = 0; i < dataSoal.length; i++) {
-        if(dataSoal[i].jawaban == jawaban[i] && (dataSoal[i].tipeSoal == "TIU" || dataSoal[i].tipeSoal == "TWK")) jawabanBenar+=5
-        else if(dataSoal[i].tipeSoal == "TKP") {
-         const nilaiTKP = dataSoal[i].jawaban.findIndex(jawaban[i])
-         jawabanBenar = jawabanBenar + Number(nilaiTKP) + 1
-         if(nilaiTKP < 4) jSalah.push(dataSoal[i])
-        }
-        else jSalah.push(dataSoal[i])
+			if(dataSoal[i].jawaban == jawaban[i] && (dataSoal[i].tipeSoal == "TIU" || dataSoal[i].tipeSoal == "TWK")){
+        jawabanBenar+=5
+        if(dataSoal[i].tipeSoal == "TIU") jTIUs+=5
+        if(dataSoal[i].tipeSoal == "TWK") jTWKs+=5
       }
-		setHasilAkhir(Math.floor((jawabanBenar/dataSoal.length)*1000))
+      else if(dataSoal[i].tipeSoal == "TKP") {
+       const soale = dataSoal[i]
+       console.log(soale.jawaban)
+       let nilaiTKP = soale.jawaban.indexOf(jawaban[i])
+       jawabanBenar = jawabanBenar + Number(nilaiTKP) + 1
+       jTKPs+= Number(nilaiTKP) + 1
+       if(nilaiTKP < 4) jSalah.push(dataSoal[i])
+      }
+			else jSalah.push(dataSoal[i])
+		}
+		setHasilAkhir(jawabanBenar)
+    setTWK(jTWKs)
+    setTIU(jTIUs)
+    setTKP(jTKPs)
 		setJawabanSalah(jSalah)
     setTimeout(()=>{
       localStorage.clear()
@@ -96,9 +109,9 @@ export default function PageComponent({dataSoals}) {
 		{"hidden" : dijawab.length != dataSoal.length }
 	)} onClick={()=>{
 		let jawabanBenar = 0;
-    let jTWKs = 0;
-    let jTIUs = 0;
-    let jTKPs = 0;
+    		let jTWKs = 0;
+   	 	let jTIUs = 0;
+    		let jTKPs = 0;
 		let jSalah = []
     
 		for(let i = 0; i < dataSoal.length; i++) {
