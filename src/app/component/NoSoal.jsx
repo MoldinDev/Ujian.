@@ -78,11 +78,11 @@ export default function NoSoal({jumlahSoal, divIdSec, noSoal, getDijawab, getNoS
         <div className="fixed md:left-0 md:top-0 md:bottom-0 lg:w-[300px] md:w-[250px] top-0 left-0 right-0 h-[120px] bg-[#F8F8F8] md:h-[100vh]">
             <div className="p-4 gap-3 overflow-auto h-full">
                 <div className="h-fit">
-                    <div className='cursor-default select-none flex justify-center items-center lg:w-[250px] md:w-[200px] w-[100px]'>
+                    <div className='cursor-default select-none flex justify-center items-center lg:w-[250px] md:w-[200px] w-full'>
         <div className='bg-slate-200 p-4 rounded-lg flex justify-center w-full'>
         {hour+ " : " +minute+ " : " +second}
         </div>
-    </div>
+                    </div>
                 </div>
                 <div className="flex gap-x-4 gap-y-2 mt-6 flex-wrap">
             {jumlahSoal.map((soal, index) => {
