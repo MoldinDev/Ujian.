@@ -1,4 +1,4 @@
-import PageComponent from "./pageComponent";
+import PageComponent from "./PageComponent";
 import { connectDatabase } from "@/app/lib/db";
 
 import React from 'react'
