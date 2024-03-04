@@ -45,7 +45,7 @@ export default function Page({params}) {
       <input
         id="kampus"
         name="kampus"
-        placeholder="Kampus Tujuan"
+        placeholder="Tujuan"
         className="md:w-[300px] w-full p-2 border-2 border-solid border-black focus:rounded-none"
         onChange={handleOnChange}
         value={kampus} // Set initial value
