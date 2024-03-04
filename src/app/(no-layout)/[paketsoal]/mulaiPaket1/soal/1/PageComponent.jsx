@@ -84,6 +84,8 @@ export default function PageComponent({dataSoals}) {
       localStorage.setItem('jawaban', JSON.stringify({0: "A"}))
       localStorage.setItem('dijawab', JSON.stringify([0]))
     }, 2000)
+	setDijawab([])
+    setJawaban({})
 	  }
   }
 
