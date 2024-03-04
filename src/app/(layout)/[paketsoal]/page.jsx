@@ -46,7 +46,7 @@ export default function Page({params}) {
         id="kampus"
         name="kampus"
         placeholder="Kampus Tujuan"
-        className="w-[300px] p-2 border-2 border-solid border-black focus:rounded-none"
+        className="md:w-[300px] w-full p-2 border-2 border-solid border-black focus:rounded-none"
         onChange={handleOnChange}
         value={kampus} // Set initial value
       />
