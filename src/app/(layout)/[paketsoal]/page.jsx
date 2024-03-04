@@ -38,7 +38,7 @@ export default function Page({params}) {
         id="name"
         name="name"
         placeholder="Nama"
-        className="w-[300px] p-2 border-2 border-solid border-black focus:rounded-none"
+        className="md:w-[300px] w-full p-2 border-2 border-solid border-black focus:rounded-none"
         onChange={handleOnChange}
         value={name} // Set initial value
       />
